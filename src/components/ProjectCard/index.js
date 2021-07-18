@@ -1,46 +1,45 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFolder } from "@fortawesome/free-solid-svg-icons";
+
 import "./ProjectCard.css";
 
 const ProjectCard = (props) => {
-  const { imageUrl, title, description, githubUrl } = props;
+  const { imageUrl, title, description, githubUrl, skills } = props;
 
   return (
     <div id="container">
-      <div class="product-details">
+      <div class="project-details">
         <h1>{title}</h1>
-
-        <p class="information">{description}</p>
-        <i class="fa fa-github-square"></i>
+        <p>{description}</p>
         <div class="control">
-          <button class="btn">
-            <span class="price">
-              <i class="fa fa-github-square" aria-hidden="true"></i>
-            </span>
-            <span class="shopping-cart">
-              <i class="fa fa-github-square" aria-hidden="true"></i>
-            </span>
-            <span class="buy">Github Repo</span>
-          </button>
+          <a href={githubUrl}>
+            <button class="btn">
+              <span class="btn-icon">
+                <FontAwesomeIcon icon={faFolder} />
+              </span>
+              <span class="buy">Github Repo</span>
+            </button>
+          </a>
+          <a href={githubUrl}>
+            <button class="btn">
+              <span class="btn-icon">
+                <FontAwesomeIcon icon={faFolder} />
+              </span>
+              <span class="buy">Github Repo</span>
+            </button>
+          </a>
         </div>
       </div>
 
-      <div class="product-image">
+      <div class="project-image">
         <img src={imageUrl} alt={title} />
 
         <div class="info">
-          <h2> Description</h2>
+          <h2>Skills</h2>
           <ul>
-            <li>
-              <strong>Height : </strong>5 Ft{" "}
-            </li>
-            <li>
-              <strong>Shade : </strong>Olive green
-            </li>
-            <li>
-              <strong>Decoration: </strong>balls and bells
-            </li>
-            <li>
-              <strong>Material: </strong>Eco-Friendly
-            </li>
+            {skills.map((skill) => {
+              return <li>{skill}</li>;
+            })}
           </ul>
         </div>
       </div>
