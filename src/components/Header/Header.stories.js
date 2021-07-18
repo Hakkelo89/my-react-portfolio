@@ -8,7 +8,7 @@ export default {
 };
 
 export const Header1 = (props) => <Header {...props} />;
-export const Header2 = (props) => <MyComponentName {...props} />;
+export const Header2 = (props) => <Header {...props} />;
 
 Header1.args = {
   /** props here if any for story 1 see sample below:
