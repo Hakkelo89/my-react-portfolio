@@ -20,14 +20,6 @@ const ProjectCard = (props) => {
               <span class="buy">Github Repo</span>
             </button>
           </a>
-          <a href={githubUrl}>
-            <button class="btn">
-              <span class="btn-icon">
-                <FontAwesomeIcon icon={faFolder} />
-              </span>
-              <span class="buy">Github Repo</span>
-            </button>
-          </a>
         </div>
       </div>
 
