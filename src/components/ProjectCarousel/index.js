@@ -1,29 +1,19 @@
-import ReactDOM from "react-dom";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
+// import ReactDOM from "react-dom";
+// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+// import { Carousel } from "react-responsive-carousel";
 
-import "./ProjectCarousel.css";
+// import "./ProjectCard.css";
 
-const ProjectCarousel = (props) => {
-  const { imageUrl, title } = props;
-  return (
-    <Carousel>
-      <Carousel
-        width="700px"
-        src={imageUrl}
-        animationHandler="fade"
-        swipeable={false}
-      >
-        {title}
-      </Carousel>
-      );
-    </Carousel>
-  );
-};
+// const ProjectCarousel = (props) => {
+//   const { imageUrl, title, description, githubUrl, skills } = props;
 
-ReactDOM.render(
-  <ProjectCarousel />,
-  document.querySelector(".project-carousel")
-);
+//   return (
+//     const createCarouselItemImage = (index, options = {}) => (
+//       <div key={index}>
+//           <img src={imageUrl} />
+//           <p>{title}</p>
+//       </div>
+//   )
 
-export default ProjectCarousel;
+
+// export default ProjectCarousel;
