@@ -1,42 +1,96 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFolder } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import clsx from "clsx";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import Card from "@material-ui/core/Card";
+import CardHeader from "@material-ui/core/CardHeader";
+import CardMedia from "@material-ui/core/CardMedia";
+import CardContent from "@material-ui/core/CardContent";
+import CardActions from "@material-ui/core/CardActions";
+import Collapse from "@material-ui/core/Collapse";
+import Avatar from "@material-ui/core/Avatar";
+import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
+import { red } from "@material-ui/core/colors";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import ShareIcon from "@material-ui/icons/Share";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
+import Description from "@material-ui/icons/Description";
 
-import "./ProjectCard.css";
+const useStyles = makeStyles((theme) => ({
+  root: {
+    maxWidth: 345,
+  },
+  media: {
+    height: 0,
+    paddingTop: "56.25%", // 16:9
+  },
+  expand: {
+    transform: "rotate(0deg)",
+    marginLeft: "auto",
+    transition: theme.transitions.create("transform", {
+      duration: theme.transitions.duration.shortest,
+    }),
+  },
+  expandOpen: {
+    transform: "rotate(180deg)",
+  },
+  avatar: {
+    backgroundColor: red[500],
+  },
+}));
 
-const ProjectCard = (props) => {
-  const { imageUrl, title, description, githubUrl, skills } = props;
+export default function RecipeReviewCard({ title, skills, description }) {
+  const classes = useStyles();
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
 
   return (
-    <div id="container">
-      <div class="project-details">
-        <h1>{title}</h1>
-        <p>{description}</p>
-        <div class="control">
-          <a href={githubUrl}>
-            <button class="btn">
-              <span class="btn-icon">
-                <FontAwesomeIcon icon={faFolder} />
-              </span>
-              <span class="buy">Github Repo</span>
-            </button>
-          </a>
-        </div>
-      </div>
-
-      <div class="project-image">
-        <img src={imageUrl} alt={title} />
-
-        <div class="info">
-          <h2>Skills</h2>
-          <ul>
+    <Card className={classes.root}>
+      <CardHeader title={title} subheader="September 14, 2016" />
+      <CardMedia
+        className={classes.media}
+        image="/static/images/cards/paella.jpg"
+        title="Paella dish"
+      />
+      <CardContent>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {description};
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton aria-label="add to favorites">
+          <FavoriteIcon />
+        </IconButton>
+        <IconButton aria-label="share">
+          <ShareIcon />
+        </IconButton>
+        <IconButton
+          className={clsx(classes.expand, {
+            [classes.expandOpen]: expanded,
+          })}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </IconButton>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
+          <Typography variant="h6">Skills</Typography>
+          <List>
             {skills.map((skill) => {
-              return <li>{skill}</li>;
+              return <ListItem>{skill}</ListItem>;
             })}
-          </ul>
-        </div>
-      </div>
-    </div>
+          </List>
+        </CardContent>
+      </Collapse>
+    </Card>
   );
-};
-
-export default ProjectCard;
+}
