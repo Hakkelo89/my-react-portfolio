@@ -8,8 +8,9 @@ import "./App.css";
 const App = () => {
   return (
     <Router>
-      <NavigationBar />
-      <Routes />
+      <NavigationBar>
+        <Routes />
+      </NavigationBar>
     </Router>
   );
 };
