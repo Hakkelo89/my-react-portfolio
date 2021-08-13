@@ -1,5 +1,5 @@
-import React from "react";
+const AboutMePage = () => {
+  return <div>About Me</div>;
+};
 
-export default function index() {
-  return <div></div>;
-}
+export default AboutMePage;

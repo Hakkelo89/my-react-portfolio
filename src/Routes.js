@@ -8,17 +8,17 @@ import ProjectsPage from "./pages/ProjectsPage";
 const Routes = () => {
   return (
     <Switch>
-      <Route exact path="/">
-        <HomePage />
-      </Route>
-      <Route exact path="/AboutMe">
+      <Route exact path="/about-me">
         <AboutMePage />
       </Route>
-      <Route exact path="/Contact">
+      <Route exact path="/contact">
         <ContactPage />
       </Route>
-      <Route exact path="/Projects">
+      <Route exact path="/projects">
         <ProjectsPage />
+      </Route>
+      <Route exact path="/">
+        <HomePage />
       </Route>
     </Switch>
   );
