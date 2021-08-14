@@ -1,5 +1,7 @@
+import SocialsCard from "../../components/SocialsCard/index.js";
+
 const ContactPage = () => {
-  return <div>Contact Me</div>;
+  return <SocialsCard />;
 };
 
 export default ContactPage;

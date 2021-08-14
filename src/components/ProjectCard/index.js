@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function RecipeReviewCard({
+export default function ProjectCard({
   title,
   skills,
   description,
