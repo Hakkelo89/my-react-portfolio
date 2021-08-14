@@ -1,5 +1,7 @@
+import ContactCard from "../../components/ContactCard/index";
+
 const AboutMePage = () => {
-  return <div>About Me</div>;
+  return <ContactCard />;
 };
 
 export default AboutMePage;
