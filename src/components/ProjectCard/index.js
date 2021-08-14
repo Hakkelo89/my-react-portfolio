@@ -9,19 +9,18 @@ import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
 import Collapse from "@material-ui/core/Collapse";
-import Avatar from "@material-ui/core/Avatar";
+import Link from "@material-ui/core/Link";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
-import Description from "@material-ui/icons/Description";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
+    margin: "8px",
   },
   media: {
     height: 0,
@@ -42,7 +41,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function RecipeReviewCard({ title, skills, description }) {
+export default function RecipeReviewCard({
+  title,
+  skills,
+  description,
+  imageUrl,
+  repoUrl,
+  appUrl,
+}) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -53,23 +59,23 @@ export default function RecipeReviewCard({ title, skills, description }) {
   return (
     <Card className={classes.root}>
       <CardHeader title={title} subheader="September 14, 2016" />
-      <CardMedia
-        className={classes.media}
-        image="/static/images/cards/paella.jpg"
-        title="Paella dish"
-      />
+      <CardMedia className={classes.media} image={imageUrl} title="Project" />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
           {description};
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
+        <Link href={repoUrl}>
+          <IconButton aria-label="add to favorites">
+            <FavoriteIcon />
+          </IconButton>
+        </Link>
+        <Link href={appUrl}>
+          <IconButton aria-label="share">
+            <ShareIcon />
+          </IconButton>
+        </Link>
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,
