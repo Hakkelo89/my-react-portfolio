@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const ProjectCard = () => {
   return (
     <div class="social-container">
-      <h3>Social Follow</h3>
+      <h3>Contact Me</h3>
 
       <a
         href="https://www.linkedin.com/in/pamela-bhopal/"
