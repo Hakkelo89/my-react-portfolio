@@ -13,8 +13,8 @@ import Link from "@material-ui/core/Link";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import TouchAppIcon from "@material-ui/icons/TouchApp";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 const useStyles = makeStyles((theme) => ({
@@ -68,12 +68,12 @@ export default function RecipeReviewCard({
       <CardActions disableSpacing>
         <Link href={repoUrl}>
           <IconButton aria-label="add to favorites">
-            <FavoriteIcon />
+            <GitHubIcon />
           </IconButton>
         </Link>
         <Link href={appUrl}>
           <IconButton aria-label="share">
-            <ShareIcon />
+            <TouchAppIcon />
           </IconButton>
         </Link>
         <IconButton
