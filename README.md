@@ -45,21 +45,21 @@ Created a updated portfolio which includes the following requirements:
 git clone git@github.com:PDUBB3/my-react_portfolio.git
 cd updated-pamela_portfolio
 code .
+```
 
 ## Screenshots
 
 ### Screenshot showing homepage of portfolio
 
-![image](../../assets/img/homep.png "homepage")
+![image](./src/assets/img/homep.png "homepage")
 
 ### Screenshot showing about me page
 
-![image](../../assets/img/me1.png "about me page")
+![image](./src/assets/img/me1.png "about me page")
 
 ### Screenshot showing my projects page
 
-![image](../../assets/img/proj.png "projectpage")
-
+![image](./src/assets/img/proj.png "projectpage")
 
 ## Available Scripts
 
@@ -77,5 +77,7 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+```
 
 ```
